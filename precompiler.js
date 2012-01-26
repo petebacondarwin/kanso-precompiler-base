@@ -10,11 +10,9 @@
   attachments = require("kanso-utils/attachments");
 
   doProcessPaths = function(pattern, processItem, path, callback) {
-    console.log("In doProcessPaths");
     return utils.find(path, pattern, function(err, files) {
       if (err) return callback(err);
       return async.forEach(files, processItem, function(err, doc) {
-        console.log("Processed path: " + path);
         return callback(err, doc);
       });
     });

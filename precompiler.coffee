@@ -4,13 +4,11 @@ modules = require("kanso-utils/modules")
 attachments = require("kanso-utils/attachments")
 
 doProcessPaths = (pattern, processItem, path, callback) ->
-  console.log("In doProcessPaths")
   # Find all the files that match the pattern within the given path
   utils.find path, pattern, (err, files) ->
     return callback(err) if err 
     # Process the files asynchronously
     async.forEach files, processItem, (err, doc)->
-      console.log("Processed path: " + path)
       callback(err, doc)
 
 module.exports =
