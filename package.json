@@ -1,0 +1,19 @@
+{
+  "author": "Pete Bacon Darwin",
+  "name": "precompiler-base",
+  "description": "Precompiler support library",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/petebacondarwin/kanso-precompiler-base.git"
+  },
+  "engines": {
+    "node": "~0.6.6"
+  },
+  "dependencies": {
+    "kanso-utils": "0.1.x",
+    "async": "0.1.x"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {}
+}
