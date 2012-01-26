@@ -53,7 +53,7 @@ Use this function to add a CommonJS module to the design document, which can be 
 - `doc`: The design document where the module will be added
 - `name`: The name of the module (without extension)
 - `originalPath`: The original full filename of the module before precompilation
-- 'content': The content of the precompiled module
+- `content`: The content of the precompiled module
 
 ### addAttachment: (doc, name, originalPath, content)
 Use this function to add an item to the design document as an attachment, which can be downloaded for use in the browser.
@@ -61,5 +61,5 @@ Use this function to add an item to the design document as an attachment, which 
 - `doc`: The design document where the attachment will be added
 - `name`: The name of the attachment
 - `originalPath`: The original full filename of the attachment before precompilation
-- 'content': The content of the precompiled attachment
+- `content`: The content of the precompiled attachment
 
