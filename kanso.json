@@ -4,6 +4,7 @@
     "categories": ["utils"],
     "description": "A base library to make building precompiler packages easier",
     "url": "https://github.com/petebacondarwin/kanso-precompiler-base/",
+    "modules": "precompiler.js",
     "dependencies": {
         "modules": "~0.0.12"
     }
