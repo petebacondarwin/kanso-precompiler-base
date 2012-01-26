@@ -3,9 +3,14 @@ This is a small CommonJS module that can be used by packages that precompile fil
 ## Usage
 Add the package as a dependency of your own precompiler package, so that when some one uses your libary the precompiler-base package will be installed too.
 
+
 In your precompiler package code (usually in `build/compile`) require the precompiler to get access to its methods:
 
-    precompiler = require("precompiler")
+    precompiler = require("precompiler-base/precompiler")
+
+Make sure that your precompiler runs after this package, otherwise you might find that the precompiler module is not yet there to be required.  Add an after call in your preprocessor:
+
+    after: "precompiler-base"
 
 ## Example
 This example is taken from the Eco template precompiler.  It uses a method called compileTemplate to actually compile the Eco templates into JavaScript.
@@ -15,6 +20,7 @@ In order to pass the doc and path objects to the compileTemplate function we cur
 Notice also that we pass the callback function that was passed to us into the processPaths function.  This is so that Kanso knows when the precompilation is complete but also, more importantly, gives Kanso the doc object to which we have added.
 
     module.exports =
+      after: "precompiler-base"
       before: "modules"
       run: (root, path, settings, doc, callback) ->
         console.log "Running eco pre-compiler"
