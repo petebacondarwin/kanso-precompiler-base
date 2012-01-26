@@ -1,6 +1,6 @@
 {
     "name": "precompiler-base",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "categories": ["utils"],
     "description": "A base library to make building precompiler packages easier",
     "url": "https://github.com/petebacondarwin/kanso-precompiler-base/",
