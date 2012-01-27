@@ -5,6 +5,6 @@
     "description": "A base library to make building precompiler packages easier",
     "url": "https://github.com/petebacondarwin/kanso-precompiler-base/",
     "preprocessors": {
-        "setup": "addModule"
+        "setup": "build/addModule"
     }
 }
