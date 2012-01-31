@@ -1,26 +1,18 @@
 This is a small CommonJS module that can be used by packages that precompile files and add them to design documents, such as compiling javascript code, html templates or css stylesheets.
 
 ## Usage
-Add the package as a dependency of your own precompiler package, so that when some one uses your libary the precompiler-base package will be installed too.
+Install the npm package in your own precompiler package:
 
+    npm install kanso-precompiler-base
 
 In your precompiler package code (usually in `build/compile`) require the precompiler to get access to its methods:
 
-    precompiler = require("precompiler-base/precompiler")
-
-Make sure that your precompiler runs after this package, otherwise you might find that the precompiler module is not yet there to be required.  Add an after call in your preprocessor:
-
-    after: "precompiler-base"
+    precompiler = require("kanso-precompiler-base")
 
 ## Example
 This example is taken from the Eco template precompiler.  It uses a method called compileTemplate to actually compile the Eco templates into JavaScript.
 
-In order to pass the doc and path objects to the compileTemplate function we curry it by using the async.apply function from the async library.
-
-Notice also that we pass the callback function that was passed to us into the processPaths function.  This is so that Kanso knows when the precompilation is complete but also, more importantly, gives Kanso the doc object to which we have added.
-
     module.exports =
-      after: "precompiler-base"
       before: "modules"
       run: (root, path, settings, doc, callback) ->
         console.log "Running eco pre-compiler"
@@ -35,6 +27,7 @@ Notice also that we pass the callback function that was passed to us into the pr
         # Run processTemplate, asynchronously, on each of the files that match the given pattern, in the given paths 
         precompiler.processPaths(templatePaths, /.*\.j?eco$/i, processTemplate, callback)
 
+Notice also that we pass the callback function that was passed to us into the processPaths function.  This is so that Kanso knows when the precompilation is complete but also, more importantly, gives Kanso the doc object to which we have added.
 
 ## Reference
 
