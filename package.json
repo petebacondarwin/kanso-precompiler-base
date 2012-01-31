@@ -2,7 +2,7 @@
   "author": "Pete Bacon Darwin",
   "name": "kanso-precompiler-base",
   "description": "A small utility library that takes the boiler plate out of creating precompilers for Kanso",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./index",
   "repository": {
     "type": "git",
