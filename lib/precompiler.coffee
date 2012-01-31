@@ -18,8 +18,9 @@ module.exports =
     for folder in paths     # Convert paths to absolute path
       utils.abspath(folder, cwd)
 
+  # The callback is of the form callback(err)
   processPaths: (paths, pattern, processItem, callback)->
-    async.forEach(paths, async.apply(doProcessPaths, pattern, processItem), (err,doc)->callback(err, doc))
+    async.forEach(paths, async.apply(doProcessPaths, pattern, processItem), callback)
     
   addModule: (doc, name, originalPath, content)->
     modules.add(doc, name, content)
