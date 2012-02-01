@@ -8,8 +8,8 @@ doProcessPaths = (pattern, processItem, path, callback) ->
   utils.find path, pattern, (err, files) ->
     return callback(err) if err 
     # Process the files asynchronously
-    async.forEach files, processItem, (err, doc)->
-      callback(err, doc)
+    async.forEach files, processItem, (err)->
+      callback(err)
 
 module.exports =
   # Ensure that we have an array of absolute paths
